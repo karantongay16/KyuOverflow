@@ -5,7 +5,8 @@
 <%= submit_tag "Search", :class => "btn btn-success" %>
 <% end %>
 <% if @posts.present? %>
-<h1 class="h1">Search Results</h1>
+<div class="search-results">
+<h1 class="h2">Search Results</h1>
 <table class="table table-bordered table-hover">
 <tr>
 <th>Question Title</th>
@@ -24,29 +25,32 @@
   </tr>
   <% end %>
   </table>
+  </div>
 <% else %>
   <% if @post == 1 %>
   <p>There are no posts containing the term(s) <%= params[:search] %>.</p>
   <% end %>
 <% end %>
 <br>
-<h1 class="h1">Question Feed</h1>
-<br>
-<table class="table table-bordered table-hover">
-  <tr>
-    <th>Question Title</th>
-    <th>Asked By</th>
-    <th>View Question</th>
-  </tr>
- 
-  <% @questions.each do |question| %>
-    <tr>
-      <td><%= question.title %></td>
-      <td><%= question.askedby %></td>
-      
-      <td><a class="btn btn-success" href= <%= question_path(question) %> >View</a></td>
-      
-    </tr>
-  <% end %>
+ <div class="h1" id="heading"></div>
+
+<%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'underscore-min' %>
+  <%= javascript_include_tag 'backbone-min' %>
+  
+    
+<%= javascript_include_tag 'main1.js' %>
+
+<ul id="nav">
+<li>
+<a data-url = "/profile" href="/profiles/#profile">Home</a><br>
+ </li>
+ </ul>
+ <div id="cont">
+ <script id="questionTemplate" type="text/template">
+            
+        </script>
+</div>
+
+<table id="#temp">
 </table>
-<br>

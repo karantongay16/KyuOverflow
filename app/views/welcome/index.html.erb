@@ -13,11 +13,11 @@
 
     <!-- Bootstrap Core CSS -->
     <%= stylesheet_link_tag "bootstrap.min.css" %>
-    <link href="css/" rel="stylesheet">
+    
 
     <!-- Custom CSS -->
     <%= stylesheet_link_tag "landing-page.css" %>
-    <link href="css/" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -79,7 +79,7 @@
                            
                           
                             <li>
-                                <a href="/questions" class="btn btn-default btn-lg"><i class="fa fa-home fa-fw"></i> <span class="network-name">Login</span></a>
+                                <a href="/app/#qfeed" data-url="/qfeed" class="btn btn-default btn-lg"><i class="fa fa-home fa-fw"></i> <span class="network-name">Login</span></a>
                             </li>
                         </ul>
                     </div>
@@ -94,10 +94,17 @@
 
 
     <!-- jQuery -->
-    <script src="js/jquery.js"></script>
+    
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
+    
+<%= javascript_include_tag 'jquery' %>
+  <%= javascript_include_tag 'underscore-min' %>
+  <%= javascript_include_tag 'backbone-min' %>
+  
+    
+<%= javascript_include_tag 'main1.js' %>
+
 
 </body>
 

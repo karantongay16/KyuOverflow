@@ -17,3 +17,20 @@ Rails.application.config.assets.precompile += %w( bootstrap.min.css )
 Rails.application.config.assets.precompile += %w( landing-page.css )
 Rails.application.config.assets.precompile += %w( formstyle.css )
 Rails.application.config.assets.precompile += %w( styles.css )
+
+Rails.application.config.assets.precompile += %w( jquery.js )
+
+Rails.application.config.assets.precompile += %w( underscore-min.js )
+
+Rails.application.config.assets.precompile += %w( backbone-min.js )
+
+Rails.application.config.assets.precompile += %w( models/askquestion.js )
+
+Rails.application.config.assets.precompile += %w( views/askquestionview.js )
+
+Rails.application.config.assets.precompile += %w( main.js )
+
+Rails.application.config.assets.precompile += %w( main1.js )
+
+
+Rails.application.config.assets.precompile += %w( backbone.modal.js )

@@ -6,6 +6,10 @@ def index
   @following = current_user.all_following
 	@answer = Answer.where(answeredby: current_user.email)
 	#@questiont = Question.where(title: @question.title)
+  respond_to do |format|
+          format.html # index.html.erb
+          format.json { render :json => [@following.count, @followers.count, @answer.count] }
+        end
 end
 
 def create
@@ -24,6 +28,14 @@ def show
   @following1 = current_user.all_following
   @answer1 = Answer.where(answeredby: @user.email)
   
+end
+
+def sendfollowingcount
+  @cnt = current_user.all_following.count
+  respond_to do |format|
+          format.html # index.html.erb
+          format.json { render :json => [@cnt] }
+        end
 end
 
 private
