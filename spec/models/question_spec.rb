@@ -17,7 +17,7 @@ RSpec.describe Question, :type => :model do
     subject.contents = nil
     expect(subject).not_to be_valid
   end
-  
+
   it "is not valid without askedby" do
     subject.askedby = nil
     expect(subject).not_to be_valid
@@ -27,5 +27,5 @@ RSpec.describe Question, :type => :model do
     assc = Question.reflect_on_association(:answers)
     expect(assc.macro).to eq :has_many
   end
- 
+
 end

@@ -10,12 +10,12 @@ My Following Count: <%= current_user.all_following.count %>
 <td>User</td>
 <td>Follow / Unfollow</td>
 </tr>
-<% @users = User.all %>
+<%  %>
 <% @users.each do |user| %>
 <% if user.email != current_user.email %>
 <tr>
 <td>
-  <%= link_to user.email, profile_path(user) %> 
+  <%= link_to user.email, profile_path(user) %>
 </td>
 <td>
 <% if current_user.following?(user) %>

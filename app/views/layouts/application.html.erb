@@ -6,6 +6,7 @@
     body
     {
       /*background-image: url('intro-bg.jpg');*/
+
     }
       footer {
    position:relative;
@@ -52,11 +53,11 @@ a
     <title>KyuOverflow</title>
     <meta name="generator" content="Bootply" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    
+
     <!--[if lt IE 9]>
       <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    
+
     <%= stylesheet_link_tag "styles" %>
     <%= csrf_meta_tags %>
 
@@ -71,7 +72,7 @@ a
 
   </head>
   <body>
-<div class="navbar navbar-light navbar-fixed-top" style="background-color: #b3f2fd;">
+<div class="navbar navbar-light navbar-fixed-top" style="background-color: #00CCFF;">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -82,7 +83,7 @@ a
       <a class="navbar-brand" href="#">KyuOverflow</a>
     </div>
     <div class="collapse navbar-collapse">
-      <ul class="nav navbar-nav nav-tabs">
+      <ul class="nav navbar-nav">
         <li class="nav-item"><a data-url="/qfeed" href="/app/#qfeed">Question Feed</a></li>
         <li><a data-url="/newq" href="/app/#newq" class="nav-item navbar-nav">Ask New Question</a></li>
         <li><a data-url="/profile" href="/app/#profile" class="nav-item navbar-nav">My Profile</a></li>
@@ -105,7 +106,7 @@ a
   <br><br>
 <div id="cont">
  <script id="questionTemplate" type="text/template">
-            
+
         </script>
 </div>
 
@@ -115,13 +116,13 @@ a
 
 
   <!-- script references -->
-  
+
 
   <%= javascript_include_tag 'underscore-min' %>
   <%= javascript_include_tag 'backbone-min' %>
-  
+
   <%= javascript_include_tag 'backbone.modal.js' %>
-    
+
 <%= javascript_include_tag 'main1.js' %>
 
 
@@ -134,7 +135,7 @@ a
       <h3 class="bbm-modal__title"></h3>
     </div>
     <div class="bbm-modal__section">
-     
+
     </div>
     <div class="bbm-modal__bottombar">
       <a href="#" class="bbm-button">Close</a>

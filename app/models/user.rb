@@ -1,3 +1,4 @@
+#Model for handling user related operations
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -13,4 +14,14 @@ class User < ApplicationRecord
   acts_as_follower
   acts_as_followable
 
+  def self.follower_hash current_user
+    User.select('email', 'id').collect do |user|
+    if current_user.id != user.id
+      user_hash = { id: user.id, email: user.email }
+      user_hash[:follow] = current_user.following?(user) ? "Unfollow" : "Follow"
+      user_hashs
+    end
+
+    end
+  end
 end

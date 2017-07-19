@@ -1,6 +1,6 @@
 require 'rails_helper.rb'
- 
-feature 'Testing', :js => true do  
+
+feature 'Testing', :js => true do
   scenario 'Login' do
 
     visit '/'
@@ -23,7 +23,7 @@ feature 'Testing', :js => true do
     sleep(1)
     fill_in 'question_title', with: 'This is Capybara testing this application?'
     sleep(1)
-    fill_in 'question_contents', with: 'This contents are of Capybara, entered during testing'
+    fill_in 'question_contents', with: 'This contents entered during testing!'
     sleep(1)
     click_on 'Submit Question'
     sleep(2)
@@ -60,11 +60,11 @@ feature 'Testing', :js => true do
     visit '/questions/:id'
     sleep(3)
     end
-    fill_in 'answer_contents', with: 'This answer is written by Capybara during testing!'
+    fill_in 'answer_contents', with: 'This answer written during testing!'
     sleep(2)
     click_on 'submit'
     sleep(2)
-    expect(page).to have_content('This answer is written by Capybara during testing')
+    expect(page).to have_content('This answer is written during testing!')
     click_on 'Log out'
     sleep(1)
 
@@ -125,7 +125,7 @@ feature 'Testing', :js => true do
     click_on 'delete_question'
     sleep(2)
     page.driver.browser.switch_to.alert.accept
-    expect(page).to have_content('You cannot delete the question asked by other user!')
+    expect(page).to have_content("Cannot delete other users' question")
     # sleep(1)
     click_on 'Log out'
     sleep(1)

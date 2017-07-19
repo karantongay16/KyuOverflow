@@ -686,49 +686,39 @@ events: {
 
 initialize: function(){
 
-	var users = [];
-	var follows = [];
-	var ids = [];
-	//var arr = [];
+	var stat = [];
 	$.ajax({
 		  url: '/api/app/listofusers',
 		  dataType: 'json',
 		  async: false,
 		  success: function (data) {
-		  	var arr = data[0].toString().split(',');
-		  	var arrid = data[1].toString().split(',');
-		    for(var i=0;i<arr.length;i++)
-		  	{
-		  		users[i] = arr[i];
-		  		ids[i] = arrid[i];
-		  	}
-		    
+		  	stat = data[0];
 		  },
 		  error: function(e){
 		  	console.log("Error");
 		  } });
 
-	$.ajax({
-		  url: '/api/app/followunfollow',
-		  dataType: 'json',
-		  async: false,
-		  success: function (data) {
-		  	var arr = data.toString().split(',');
-		    for(var i=0;i<arr.length;i++)
-		  	{
-		  		follows[i] = arr[i];
-		  	}
+	// $.ajax({
+	// 	  url: '/api/app/followunfollow',
+	// 	  dataType: 'json',
+	// 	  async: false,
+	// 	  success: function (data) {
+	// 	  	var arr = data.toString().split(',');
+	// 	    for(var i=0;i<arr.length;i++)
+	// 	  	{
+	// 	  		follows[i] = arr[i];
+	// 	  	}
 		    
-		  },
-		  error: function(e){
-		  	console.log("Error");
-		  } });
+	// 	  },
+	// 	  error: function(e){
+	// 	  	console.log("Error");
+	// 	  } });
 
 
-this.showusers(users,ids,follows);
+this.showusers(stat);
 },
 
-showusers: function(users,ids,follows){
+showusers: function(stat){
 	$(".viewheader").html("All Users");
 	this.$el.append("" +
 	"<table class='table table-fixed' id='userstable'>" +
@@ -736,15 +726,15 @@ showusers: function(users,ids,follows){
 		"<td>User</td>" +
 		"<td>Follow / Unfollow</td>" +
 		"</tr>");
-	for (var i=0;i<users.length;i++)
+	for (var i=0;i<stat.length;i++)
 	{
 	this.$("#userstable").append("" +
 		"<tr>" +
 		"<td>" +
-		  "" + users[i] +
+		  "" + stat[i].email +
 		"</td>" +
 		"<td>" +
-		"<button class='btn btn-success onfollow' username=" + users[i] +" id='" + ids[i] + "' status=" + follows[i] + ">" + follows[i] + "</button>" +
+		"<button class='btn btn-success onfollow' username=" + stat[i].email +" id='" + stat[i].id + "' status=" + stat[i].follow + ">" + stat[i].follow + "</button>" +
 		"</td></tr>");
 	}
 	this.$el.append("</table>");

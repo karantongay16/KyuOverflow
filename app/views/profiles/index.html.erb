@@ -1,4 +1,4 @@
-<br>
+<!-- <br>
 <h1 class="h1">My Profile</h1>
 <br>
 <center>
@@ -11,7 +11,7 @@
 					</div>
 					<div class="bnr-text">
 						<h1>Quick Stats</h1>
-						
+
 					</div>
 					<div class="btm-num">
 						<ul>
@@ -28,7 +28,7 @@
 								<h5>Answers</h5>
 							</li>
 						</ul>
-					</div>				
+					</div>
 				</div>
 				</center>
 
@@ -49,7 +49,7 @@ My Registered Email:
 </tr>
 <tr>
 <td>
-No of Questions asked: 
+No of Questions asked:
 </td>
 <td>
 <%= @question.count %>
@@ -57,7 +57,7 @@ No of Questions asked:
 </tr>
 <tr>
 <td>
-No of Questions Answered: 
+No of Questions Answered:
 </td>
 <td>
 <%= @answer.count %>
@@ -69,19 +69,19 @@ No of Questions Answered:
 <div class="col-md-2" style="position:relative; border:thin; overflow:auto; float:left; background-color: #b3f2fd; padding-top:10px; width: 310px;height: 200px;">
 Followers:
 <br><br>
-<% @followers.each do |f| %>
-<%= link_to f.email, profile_path(f) %> 
+<% @followers.each #do |f| %>
+<%= link_to f.email, profile_path(f) %>
 <br>
-<% end %>
+<% #end %>
 </div>
 <br><br><br><br><br><br>
 <div class="col-md-2" style="position:relative; border:thin yellow; overflow:auto; float:left; background-color: #b3f2fd; padding-top:10px; width: 310px; height: 185px;">
 Following:
 <br><br>
-<% @following.each do |f| %>
-<%= link_to f.email, profile_path(f) %> 
+<% @following.each #do |f| %>
+<%= link_to f.email, profile_path(f) %>
 <br>
-<% end %>
+<% #end %>
 </div>
 
 <div class="clearfix"> </div>
@@ -89,16 +89,16 @@ Following:
 <br><br>
 <h3 class="h3">My Questions</h3>
 <br>
-<% @question.each do |q| %>
+<% @question.each #do |q| %>
 Title: <%= link_to q.title, question_path(q) %>
 <br>
-<% end %>
+<% #end %>
 <br><br>
 <h3 class="h3">My Answers</h3>
 <br>
-<% @answer.each do |a| %>
-<% @ques = Question.find(a.question_id) %>
+<% @answer.each #do |a| %>
+<% @ques #= Question.find(a.question_id) %>
 Answered To: <%= link_to @ques.title, question_path(@ques) %>
 <br>
-<% end %>
-<br><br>
+<% #end %>
+<br><br> -->

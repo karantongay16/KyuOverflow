@@ -1,5 +1,5 @@
 <div class="answer" style="background-color:lightblue; height:320px; padding:25px; border-radius:25px;">
-<%= form_for([@question, @question.answers.build]) do |f| %>
+<%= form_for([question, question.answers.build]) do |f| %>
   <p>
     <%= f.label :poster %><br>
     <%= f.text_field :poster, :class => "form-control", :value => current_user.email, :readonly => true %>
